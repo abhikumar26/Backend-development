@@ -1,0 +1,13 @@
+import mongoose from "mongoose";
+
+async function connectdb(){
+    try{
+        await mongoose.connect("mongodb://localhost:27017/employeeSystem");
+        console.log("Database connected successfully...!");
+        
+    }catch(error){
+        console.log("Failed to connect Database",error);
+        process.exit(1)
+    }
+}
+export default connectdb;
