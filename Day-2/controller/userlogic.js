@@ -1,4 +1,3 @@
-
 import User from "../model/user.js";
 
 
@@ -34,4 +33,15 @@ const createUser = async (req,res)=>{
         })
     }
 }
+const getuser = async(req,res)=>{
+    try{
+        const user = await user.find()
+        if(user){
+            return res.status(404).json({
+                message:"data not found"
+            })
+        }
+    }
+}
+
 export {createUser};
